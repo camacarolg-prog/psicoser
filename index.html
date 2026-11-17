@@ -248,6 +248,21 @@ a.dato:hover{background:var(--verde-claro)}
 .dato .ic svg{width:22px;height:22px;stroke:var(--verde)}
 .dato small{display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--texto-suave)}
 .dato span{font-weight:600;word-break:break-word}
+.dato-txt{flex:1;min-width:0}
+.correo-txt{user-select:all;-webkit-user-select:all;cursor:text}
+.copiar{flex-shrink:0;border:1.5px solid var(--verde);background:var(--blanco);color:var(--verde);font:inherit;font-size:.82rem;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;transition:.2s}
+.copiar:hover,.copiar.ok{background:var(--verde);color:#fff}
+.copiar-pie{border-color:#8FA39D;background:transparent;color:#B8C7C2;padding:3px 10px;font-size:.75rem;margin-left:6px}
+.copiar-pie:hover{background:#fff;color:var(--texto);border-color:#fff}
+.wa-card{display:flex;flex-direction:column;align-self:start}
+.wa-ic{width:64px;height:64px;border-radius:18px;background:#25D366;display:grid;place-items:center;margin-bottom:18px}
+.wa-ic svg{width:36px;height:36px;fill:#fff}
+.wa-lista{list-style:none;display:grid;gap:10px;margin:4px 0 26px}
+.wa-lista li{padding-left:28px;position:relative;color:var(--texto-suave);font-size:.97rem}
+.wa-lista li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:var(--verde-claro) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232F5D57' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/11px no-repeat}
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 8px 20px -8px rgba(37,211,102,.7);width:100%}
+.btn-wa:hover{background:#1EBE5A}
+.wa-num{text-align:center;margin-top:12px;font-weight:700;color:var(--texto-suave);font-size:.95rem}
 .mapa{border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde);background:var(--fondo-2);aspect-ratio:16/10;position:relative}
 .mapa iframe{width:100%;height:100%;border:0;position:relative;z-index:1}
 .mapa .fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--texto-suave);font-size:.95rem}
@@ -398,7 +413,7 @@ footer a:hover{color:#fff}
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Psicoterapia individual para adultos</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Terapia de pareja</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Programa para el adulto mayor autónomo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Programa para el adulto mayor autónomo, enfocado en la prevención y el bienestar integral</li>
         </ul>
         <a href="#servicios" class="btn">Ver servicios clínicos</a>
       </article>
@@ -470,10 +485,10 @@ footer a:hover{color:#fff}
         <h3>Terapia de pareja</h3>
         <p>Un espacio para que ambos se escuchen, comprendan sus diferencias y encuentren nuevas formas de resolver conflictos.</p>
         <ul>
+          <li>Acuerdos, proyecto de pareja</li>
+          <li>Crisis de confianza y de distanciamiento</li>
+          <li>Cambios de etapa, convivencia, hijos y separación</li>
           <li>Comunicación y discusiones recurrentes</li>
-          <li>Crisis de confianza o distanciamiento</li>
-          <li>Cambios de etapa: convivencia, hijos, separación</li>
-          <li>Acuerdos y proyecto en común</li>
         </ul>
         <a href="#" class="link js-wa" data-msg="Hola Elizabeth, quisiera información sobre la terapia de pareja.">Consultar disponibilidad <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
@@ -496,7 +511,7 @@ footer a:hover{color:#fff}
       <h2 class="rv">¿Cómo comenzamos?</h2>
     </div>
     <div class="pasos">
-      <div class="paso rv"><h3>Escríbeme</h3><p>Por WhatsApp o el formulario. Respondo tus dudas y coordinamos un horario.</p></div>
+      <div class="paso rv"><h3>Escríbeme</h3><p>Por WhatsApp. Respondo tus dudas y coordinamos un horario.</p></div>
       <div class="paso rv"><h3>Nos conocemos</h3><p>En la primera sesión conversamos sobre lo que te trae a consulta, sin presiones.</p></div>
       <div class="paso rv"><h3>Definimos objetivos</h3><p>Acordamos metas claras y un plan de trabajo adaptado a ti.</p></div>
       <div class="paso rv"><h3>Avanzamos juntos</h3><p>Aplicamos herramientas prácticas y revisamos tu progreso en el camino.</p></div>
@@ -566,7 +581,7 @@ footer a:hover{color:#fff}
         <div class="campo"><label for="e-msg">Comentarios</label><textarea id="e-msg" name="mensaje" placeholder="Plazos, ubicación, requisitos del perfil…"></textarea></div>
         <label class="check"><input type="checkbox" required id="e-ok"> <span>Acepto la <button type="button" class="js-privacidad">política de privacidad</button> y el uso de mis datos para responder esta solicitud.</span></label>
         <button type="submit" class="btn btn-terracota">Preparar solicitud</button>
-        <div class="form-ok" role="status"><p>¡Listo! Elige cómo enviar tu solicitud:</p><div class="acciones"></div></div>
+        <div class="form-ok" role="status"><p>¡Listo! Envía tu solicitud por WhatsApp:</p><div class="acciones"></div></div>
       </form>
     </div>
   </div>
@@ -594,7 +609,7 @@ footer a:hover{color:#fff}
       <div class="faq"><button aria-expanded="false">¿Cómo sé si necesito ir a terapia?<span class="mas"></span></button><div class="resp"><p>Si sientes que la ansiedad, el estrés, una pérdida o un conflicto están afectando tu sueño, tu trabajo, tus relaciones o tu ánimo, la terapia puede ayudarte. No es necesario “estar muy mal” para consultar: también es un espacio para prevenir y crecer.</p></div></div>
       <div class="faq"><button aria-expanded="false">¿Qué es la terapia cognitivo-conductual?<span class="mas"></span></button><div class="resp"><p>Es uno de los enfoques con mayor respaldo científico. Trabaja cómo tus pensamientos influyen en tus emociones y conductas, y entrega herramientas prácticas para aplicar en tu vida diaria. En Psicoser se aplica de forma integrativa, adaptándola a cada persona.</p></div></div>
       <div class="faq"><button aria-expanded="false">¿Lo que hablo en sesión es confidencial?<span class="mas"></span></button><div class="resp"><p>Sí. Todo lo que compartes está protegido por el secreto profesional, salvo las excepciones que establece la ley cuando existe riesgo grave para ti o para terceros. Esto se conversa con claridad desde la primera sesión.</p></div></div>
-      <div class="faq"><button aria-expanded="false">¿Cómo agendo y dónde es la atención?<span class="mas"></span></button><div class="resp"><p>Puedes escribirme por WhatsApp al +56 9 8271 0107 o usar el formulario de contacto. La consulta está en Av. Videla 810, Coquimbo. Te confirmo horarios disponibles y valores al momento de agendar.</p></div></div>
+      <div class="faq"><button aria-expanded="false">¿Cómo agendo y dónde es la atención?<span class="mas"></span></button><div class="resp"><p>Puedes escribirme por WhatsApp al +56 9 8271 0107. La consulta está en Av. Videla 810, Coquimbo. Te confirmo horarios disponibles y valores al momento de agendar.</p></div></div>
       <div class="faq"><button aria-expanded="false">¿Atienden empresas fuera de Coquimbo?<span class="mas"></span></button><div class="resp"><p>Escríbeme con los detalles de tu proceso de selección (cantidad de candidatos, cargos y ubicación) y evaluaremos la mejor modalidad para tu empresa.</p></div></div>
     </div>
   </div>
@@ -614,9 +629,10 @@ footer a:hover{color:#fff}
           <a class="dato js-wa" href="#" data-msg="Hola Elizabeth, quisiera agendar una hora.">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
             <div><small>WhatsApp / Teléfono</small><span>+56 9 8271 0107</span></div></a>
-          <a class="dato" href="mailto:britomoraelizabeth.cl@gmail.com">
+          <div class="dato">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
-            <div><small>Correo</small><span>britomoraelizabeth.cl@gmail.com</span></div></a>
+            <div class="dato-txt"><small>Correo</small><span class="correo-txt">britomoraelizabeth.cl@gmail.com</span></div>
+            <button type="button" class="copiar js-copiar" aria-label="Copiar correo">Copiar</button></div>
           <a class="dato" href="https://www.instagram.com/psicoser2024/" target="_blank" rel="noopener">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></div>
             <div><small>Instagram</small><span>@psicoser2024</span></div></a>
@@ -631,27 +647,20 @@ footer a:hover{color:#fff}
         <a class="mapa-link" href="https://www.google.com/maps/search/?api=1&query=Av.+Videla+810,+Coquimbo,+Chile" target="_blank" rel="noopener">Cómo llegar en Google Maps <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </div>
 
-      <form class="form-card rv" id="form-contacto" novalidate style="background:var(--fondo)">
-        <h3>Escríbeme</h3>
-        <p class="sub">Completa tus datos y envía tu mensaje directo por WhatsApp o correo.</p>
-        <div class="fila">
-          <div class="campo"><label for="c-nombre">Nombre *</label><input id="c-nombre" name="nombre" required autocomplete="name"></div>
-          <div class="campo"><label for="c-fono">Teléfono</label><input id="c-fono" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9"></div>
-        </div>
-        <div class="campo"><label for="c-correo">Correo</label><input id="c-correo" name="correo" type="email" autocomplete="email"></div>
-        <div class="campo"><label for="c-motivo">Motivo de consulta</label>
-          <select id="c-motivo" name="motivo">
-            <option>Psicoterapia individual</option>
-            <option>Terapia de pareja</option>
-            <option>Adulto mayor</option>
-            <option>Servicios a empresas</option>
-            <option>Otra consulta</option>
-          </select></div>
-        <div class="campo"><label for="c-msg">Mensaje *</label><textarea id="c-msg" name="mensaje" required placeholder="Cuéntame brevemente en qué te puedo ayudar y tu disponibilidad horaria."></textarea></div>
-        <label class="check"><input type="checkbox" required id="c-ok"> <span>Acepto la <button type="button" class="js-privacidad">política de privacidad</button>.</span></label>
-        <button type="submit" class="btn btn-primario">Preparar mensaje</button>
-        <div class="form-ok" role="status"><p>¡Gracias! Elige cómo enviar tu mensaje:</p><div class="acciones"></div></div>
-      </form>
+      <div class="form-card wa-card rv" style="background:var(--fondo)">
+        <div class="wa-ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3.2 28.8l7.1-1.8a12.8 12.8 0 0 0 5.7 1.4c7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10.5 10.5 0 1 1 9.2 5.1zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.3z"/></svg></div>
+        <h3>Escríbeme por WhatsApp</h3>
+        <p class="sub">Es la forma más rápida de resolver tus dudas y coordinar tu hora. Te respondo personalmente a la brevedad.</p>
+        <ul class="wa-lista">
+          <li>Cuéntame brevemente el motivo de tu consulta.</li>
+          <li>Indícame tu disponibilidad horaria.</li>
+          <li>Te confirmo horario y valores.</li>
+        </ul>
+        <a href="#" class="btn btn-wa js-wa" data-msg="Hola Elizabeth, vi tu página web y me gustaría agendar una hora.">
+          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3.2 28.8l7.1-1.8a12.8 12.8 0 0 0 5.7 1.4c7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10.5 10.5 0 1 1 9.2 5.1z"/></svg>
+          Abrir chat en WhatsApp</a>
+        <p class="wa-num">+56 9 8271 0107</p>
+      </div>
     </div>
   </div>
 </section>
@@ -686,7 +695,7 @@ footer a:hover{color:#fff}
         <h4>Contacto</h4>
         <ul>
           <li><a href="#" class="js-wa" data-msg="Hola Elizabeth, quisiera agendar una hora.">+56 9 8271 0107</a></li>
-          <li><a href="mailto:britomoraelizabeth.cl@gmail.com">britomoraelizabeth.cl@gmail.com</a></li>
+          <li><span class="correo-txt">britomoraelizabeth.cl@gmail.com</span> <button type="button" class="copiar copiar-pie js-copiar" aria-label="Copiar correo">Copiar</button></li>
           <li><a href="https://www.instagram.com/psicoser2024/" target="_blank" rel="noopener">Instagram @psicoser2024</a></li>
           <li>Av. Videla 810, Coquimbo</li>
         </ul>
@@ -789,7 +798,7 @@ document.querySelectorAll('.js-privacidad').forEach(b => b.addEventListener('cli
 modal.addEventListener('click', e => { if (e.target === modal || e.target.classList.contains('modal-cerrar')) modal.classList.remove('show'); });
 addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('show'); });
 
-/* Formularios → mensaje listo para WhatsApp o correo (sin servidor) */
+/* Formulario de empresas → mensaje listo para WhatsApp (sin servidor) */
 function prepararForm(form, construir, asunto) {
   form.addEventListener('submit', e => {
     e.preventDefault();
@@ -805,22 +814,28 @@ function prepararForm(form, construir, asunto) {
     const texto = construir(d);
     const box = form.querySelector('.form-ok');
     box.querySelector('.acciones').innerHTML =
-      `<a class="btn btn-primario" target="_blank" rel="noopener" href="${wa(texto)}">Enviar por WhatsApp</a>` +
-      `<a class="btn btn-borde" href="mailto:${CONFIG.correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(texto)}">Enviar por correo</a>`;
+      `<a class="btn btn-wa" target="_blank" rel="noopener" href="${wa(texto)}">Enviar por WhatsApp</a>`;
     box.classList.add('show');
     box.scrollIntoView({behavior:'smooth', block:'nearest'});
   });
 }
-prepararForm(document.getElementById('form-contacto'), d =>
-  `Hola Elizabeth, soy ${d.nombre}.\nMotivo: ${d.motivo}\n${d.mensaje}` +
-  (d.telefono ? `\nTeléfono: ${d.telefono}` : '') + (d.correo ? `\nCorreo: ${d.correo}` : ''),
-  'Consulta desde la web – Psicoser');
 prepararForm(document.getElementById('form-empresa'), d =>
   `Hola Elizabeth, solicito una propuesta para mi empresa.\nEmpresa: ${d.empresa}\nContacto: ${d.nombre}\nCorreo: ${d.correo}` +
   (d.telefono ? `\nTeléfono: ${d.telefono}` : '') + `\nServicio: ${d.servicio}` +
   (d.vacantes ? `\nN° de vacantes/candidatos: ${d.vacantes}` : '') + (d.cargos ? `\nCargo(s): ${d.cargos}` : '') +
   (d.mensaje ? `\nComentarios: ${d.mensaje}` : ''),
   'Solicitud de propuesta – Selección de personal');
+
+/* Copiar correo (sin abrir el programa de correo) */
+document.querySelectorAll('.js-copiar').forEach(b => b.addEventListener('click', async () => {
+  const txt = CONFIG.correo;
+  let ok = false;
+  try { await navigator.clipboard.writeText(txt); ok = true; } catch (e) {
+    try { const t = document.createElement('textarea'); t.value = txt; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); ok = document.execCommand('copy'); t.remove(); } catch (e2) {}
+  }
+  const orig = b.textContent; b.textContent = ok ? '¡Copiado!' : 'Selecciona y copia'; b.classList.toggle('ok', ok);
+  setTimeout(() => { b.textContent = orig; b.classList.remove('ok'); }, 2000);
+}));
 
 /* Testimonios */
 if (TESTIMONIOS.length) {
